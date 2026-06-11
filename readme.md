@@ -2,10 +2,11 @@
 
 # ASTRA: Adaptive Structure and Topic-aware Retrieval-Augmented Generation
 
+
+
 ## Install
 
 ```bash
-# remember clone this repo first
 cd ASTRA
 pip install -e .
 ```
@@ -23,7 +24,6 @@ graph_func = ASTRA(
     enable_hierachical_mode=True, 
     embedding_batch_num=6,
     embedding_func_max_async=8,
-    enable_naive_rag=True
     )
 # indexing
 with open("path_to_your_context.txt", "r") as f:
@@ -110,6 +110,4 @@ python astra_search_deepseek.py your_context.txt
 
 - `astra/`: core library implementation.
 - `pageindex/`: page-index processing utilities.
-- `files/`: example input documents.
-- `docs/`: design and technical notes.
-- `case/`: case scripts and analysis helpers.
+- `files/`: example input documents of the computer science category from the Ultradomain dataset.
