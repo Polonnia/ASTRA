@@ -26,8 +26,8 @@ model_params:
 
 # ASTRA Configuration
 astra:
-  working_dir: "results_zh/NAT"
-  language: "chinese"
+  working_dir: "results"
+  language: "english"
   enable_llm_cache: false
   embedding_batch_num: 6
   embedding_func_max_async: 8
@@ -35,9 +35,9 @@ astra:
   chunk_token_size: 1200
   entity_extract_max_gleaning: 1
   #evidence token limit for each retrieval source
-  max_token_for_text_unit: 20000
-  max_token_for_graph: 20000
-  max_token_for_summary: 20000
+  max_token_for_text_unit: 10000
+  max_token_for_graph: 10000
+  max_token_for_summary: 10000
   # if true, run macro traversal on document tree (and leaf detail traversal)
   enable_tree_traversal: false
   #number of entity/relation from vector retrieval

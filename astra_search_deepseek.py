@@ -109,11 +109,9 @@ async def deepseepk_model_if_cache(
 graph_func = ASTRA(
     working_dir=config['astra']['working_dir'],
     enable_llm_cache=config['astra']['enable_llm_cache'],
-    language=config['astra'].get('language', 'english'),
     embedding_func=GLM_embedding,
     best_model_func=deepseepk_model_if_cache,
     cheap_model_func=deepseepk_model_if_cache,
-    enable_hierachical_mode=config['astra']['enable_hierachical_mode'], 
     embedding_batch_num=config['astra']['embedding_batch_num'],
     embedding_func_max_async=config['astra']['embedding_func_max_async'],
     enable_naive_rag=config['astra']['enable_naive_rag'],
@@ -138,5 +136,5 @@ input_path = resolve_input_file(args.file_name)
 with open(input_path, "r", encoding="utf-8") as f:
     graph_func.insert(f.read())
 
-# print("Perform dual search:")
-# print(graph_func.query("What are the top themes in this story?", param=QueryParam(mode="dual")))
+print("Perform dual search:")
+print(graph_func.query("What are the top themes in this story?", param=QueryParam(mode="dual")))
